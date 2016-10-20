@@ -1,0 +1,11 @@
+<ion-view view-title="Archive">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="toDo in doneList">
+        <h2>{{toDo.task}}</h2>
+        <p>{{toDo.time}}</p>
+        <ion-option-button class="button-positive" ng-click="markAsDone({{toDo}})">Done</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

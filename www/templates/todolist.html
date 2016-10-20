@@ -1,0 +1,12 @@
+<ion-view view-title="To Do List">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="toDo in toDoList">
+        <h2>{{toDo.task}}</h2>
+        <p>{{toDo.time}}</p>
+        <ion-option-button class="button-positive" ng-click="markAsDone({{toDo}})">Done</ion-option-button>
+        <ion-option-button class="button-negative" ng-click="remove({{toDo}})">Remove</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
