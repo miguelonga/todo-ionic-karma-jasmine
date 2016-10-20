@@ -39,12 +39,20 @@ angular.module('starter.controllers', ['api.todoes'])
 
 .controller('ToDoListCtrl', ['toDoList',"$scope", "$http", function(tdl, $scope, $http) {
 
+  $scope.categories = tdl.categories;
+
   $scope.markAsDone = function(toDo){
     tdl.markAsDone(toDo);
   };
 
   $scope.remove = function(toDo){
     tdl.remove(toDo);
+  };
+
+  $scope.filterByCategory = function(category){
+    console.log(category);
+    $scope.toDoList = tdl.all;
+    $scope.toDoList = tdl.filterByCategory(category);
   };
 
 }])

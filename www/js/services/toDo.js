@@ -17,6 +17,8 @@ angular.module('api.todoes',[])
     }
   ];
 
+  var categories = ['all','personal','cosas de casa'];
+
   var doneList = [];
 
   var createTask = function(task){
@@ -34,11 +36,16 @@ angular.module('api.todoes',[])
   };
 
   var filterByCategory = function(category){
-    return toDoList.filter(function(toDo){ return toDo.category === category })
+    if (category === 'all') {
+      return toDoList;
+    }else{
+      return toDoList.filter(function(toDo){ return toDo.category === category });
+    }
   }
 
   return {
     all: toDoList,
+    categories: categories,
     doneList: doneList,
     createTask: createTask,
     markAsDone: markAsDone,

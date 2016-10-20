@@ -1,9 +1,15 @@
 <ion-view view-title="To Do List">
   <ion-content>
+    <div class="button-bar">
+      <a ng-repeat="category in categories" ng-click="filterByCategory(category)" class="button">
+        {{category}}
+      </a>
+    </div>
     <ion-list>
       <ion-item ng-repeat="toDo in toDoList">
         <h2>{{toDo.task}}</h2>
         <p>{{toDo.time}}</p>
+        <p>{{toDo.category}}</p>
         <ion-option-button class="button-positive" ng-click="markAsDone({{toDo}})">Done</ion-option-button>
         <ion-option-button class="button-negative" ng-click="remove({{toDo}})">Remove</ion-option-button>
       </ion-item>
