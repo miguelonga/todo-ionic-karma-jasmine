@@ -7,11 +7,13 @@ angular.module('api.todoes',[])
   var toDoList = [
     { 
       task: "planchar",
-      time: "10:00 AM"
+      time: "10:00 AM",
+      category: "cosas de casa"
     },
     { 
       task: "Almorzar bien",
-      time: "10:30 AM"
+      time: "10:30 AM",
+      category: "personal"
     }
   ];
 
@@ -31,12 +33,17 @@ angular.module('api.todoes',[])
     toDoList.splice(taskIndex, 1);
   };
 
+  var filterByCategory = function(category){
+    return toDoList.filter(function(toDo){ return toDo.category === category })
+  }
+
   return {
     all: toDoList,
     doneList: doneList,
     createTask: createTask,
     markAsDone: markAsDone,
-    remove: remove
+    remove: remove,
+    filterByCategory: filterByCategory
   };
 });
 })();

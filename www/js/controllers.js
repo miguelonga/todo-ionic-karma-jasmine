@@ -6,7 +6,8 @@ angular.module('starter.controllers', ['api.todoes'])
 
   $scope.newToDo = {
     task: undefined,
-    time: undefined
+    time: undefined,
+    category: undefined
   };
 
   $scope.doneList = tdl.doneList;
